@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kmodule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://www.drools.org/xsd/kmodule">
+    <!--
+       可以存在多个<kbase>标签；
+       name属性值可以随意设置；
+       packages：对应*.drl文件的resources路径
+
+       ksession标签必须设置；一个或者多个标签，name属性值唯一
+
+       -->
+    <kbase name="test-rulesKB" packages="rules">
+        <ksession name="test-rulesKS"/>
+    </kbase>
+
+</kmodule>

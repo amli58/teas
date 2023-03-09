@@ -1,0 +1,14 @@
+package rules
+import com.ruoyi.gyl.domain.Customer
+
+rule "customerAge"
+no-loop true // 定义当前的规则是否 不允许多次循环执行,默认是 false,也就是当前的规则只要满足条件,可以无限次执行
+lock-on-active true //将lock-on-active属性的值设置为true,可避免因某些Fact对象被修改而使已经执行过的规则再次被激活执行。
+salience 1
+when
+$customer:Customer(age < 10)
+then
+$customer.setAge($customer.getAge() + 1);
+//update($customer)
+System.out.println($customer.getName() + ",age:" + $customer.getAge());
+end
